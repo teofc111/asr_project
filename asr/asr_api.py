@@ -1,3 +1,9 @@
+'''
+Microservice for Automatic Speech Recognition (ASR).
+Using huggingface facebook/wav2vec2-large-960h model.
+'''
+
+
 import os
 from flask import Flask, request, jsonify
 
@@ -57,7 +63,7 @@ def asr():
     duration = waveform.size(1) / 16000
 
     # Process audio and infer
-    input_values = processor(waveform.squeeze().numpy(), return_tensors="pt", padding="longest").input_values
+    input_values = processor(waveform.squeeze().numpy(), return_tensors="pt", padding="longest", sampling_rate=16000).input_values
     with torch.no_grad():
         logits = model(input_values).logits
     predicted_ids = torch.argmax(logits, dim=-1)
@@ -69,6 +75,6 @@ def asr():
     return jsonify({"transcription": transcription, "duration":duration})
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8001, debug=True)
+    app.run(host='0.0.0.0', port=8001)
 
 
