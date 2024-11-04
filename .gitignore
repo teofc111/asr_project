@@ -2,6 +2,7 @@
 *.wav
 common_voice.zip
 common_voice/
+test.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
