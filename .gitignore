@@ -1,3 +1,8 @@
+# Files/Folders
+*.wav
+common_voice.zip
+common_voice/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
