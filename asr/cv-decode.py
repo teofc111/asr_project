@@ -2,6 +2,8 @@
 Decode all audio files in cv-valid-dev
 Assumes flask app is already running
 '''
+
+# Imports
 import os
 import requests
 import glob
@@ -30,6 +32,6 @@ for audio_filepath, audio_filename in zip(audio_filepaths, audio_filenames):
         df.loc[audio_filename,'generated_text'] = response.json()['transcription']
         j+=1
         if j %100 == 0:
-            print(f'{j}/{len(audio_filepath)}')
+            print(f'{j}/{len(audio_filepaths)}')
 
 df.to_csv(cv_valid_dev_updated_csv_path) # Saving to current (asr) folder

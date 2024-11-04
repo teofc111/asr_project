@@ -3,12 +3,11 @@ Microservice for Automatic Speech Recognition (ASR).
 Using huggingface facebook/wav2vec2-large-960h model.
 '''
 
-
+# Imports
 import os
 from flask import Flask, request, jsonify
 
 from transformers import Wav2Vec2Processor, Wav2Vec2ForCTC
-# from datasets import load_dataset
 import torch
 import torchaudio
 from pydub import AudioSegment
