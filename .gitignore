@@ -3,6 +3,9 @@
 common_voice.zip
 common_voice/
 test.ipynb
+asr-train/model_outputs
+asr-train/temp_dataset
+asr-train/temp.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
