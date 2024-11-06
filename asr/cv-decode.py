@@ -1,6 +1,6 @@
 '''
-Decode all audio files in cv-valid-dev
-Assumes flask app is already running
+Decode all audio files in cv-valid-dev.
+Assumes flask app is already running.
 '''
 
 # Imports
@@ -9,11 +9,11 @@ import requests
 import glob
 import pandas as pd
 
-# Define paths/URLs
+# Define paths/URLs. Required files assumed in parent directory 
 url = 'http://localhost:8001/asr'
-cv_valid_dev_folder_path = '/home/tfc/asr/common_voice/cv-valid-dev/cv-valid-dev/*'
-cv_valid_dev_csv_path = '/home/tfc/asr/common_voice/cv-valid-dev.csv'
-cv_valid_dev_updated_csv_path = '/home/tfc/asr/cv-valid-dev-updated.csv'
+cv_valid_dev_folder_path = os.path.expanduser('~/asr_project/common_voice/cv-valid-dev/cv-valid-dev/*') # Change this to the path to your batch of audio files. Keep '*' for code to work.
+cv_valid_dev_csv_path = os.path.expanduser('~/asr_project/common_voice/cv-valid-dev.csv')               # Change this to the path to your csv file containing audio transcripts for each audio file.
+cv_valid_dev_updated_csv_path = os.path.expanduser('~/asr_project/cv-valid-dev-updated.csv')            # Change this to your preferred path to store the updated csv
 
 # Create df from original csv to update with generated text
 df = pd.read_csv(cv_valid_dev_csv_path)

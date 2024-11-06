@@ -15,7 +15,7 @@ from pydub import AudioSegment
 # Flask app
 app = Flask('asr')
 
-# Load the model and processor when needed
+# Load model and processor when needed
 model = None
 processor = None
 
@@ -29,7 +29,7 @@ def ping():
 def asr():
     global model, processor
 
-    # Check if a file is part of the request
+    # Check if file is part of request
     if ('file' not in request.files) or (request.files['file'].filename == ''):
         return jsonify({"error": "Please upload an audio file (.mp3/.wav)."})
     
@@ -69,7 +69,7 @@ def asr():
     transcription = processor.batch_decode(predicted_ids)[0]
 
     # Delete temp wav file
-    os.remove(temp_wav_path)                             # Delete temp wav file
+    os.remove(temp_wav_path)
 
     return jsonify({"transcription": transcription, "duration":duration})
 

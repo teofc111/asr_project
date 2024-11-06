@@ -13,4 +13,8 @@ Once the Docker container is running, you can run the following in a new termina
 To transcribe a .wav or .mp3 audio file, run the following command, replacing `/path/to/file.mp3` with the path to your file.
 `curl -F ‘file=@/path/to/file.mp3’ http://localhost:8001/asr`
 
-A sample of a batch-transcribed text is given in `cv-valid-dev-updated.csv`.
+A sample of a batch-transcribed text is given in `asr/cv-valid-dev-updated.csv`.
+
+!!!!!!!!!!!!!
+Place common_voice in main directory.
+assume cloned to home directory at ~
