@@ -9,6 +9,7 @@ asr-train/temp_dataset
 asr-train/temp.csv
 asr-train/logs
 asr-train/logs2
+asr-train/wav2vec2-large-960h-cv/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
