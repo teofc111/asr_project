@@ -7,7 +7,6 @@ asr-train/model_outputs*
 asr-train/temp*
 asr-train/logs2
 asr-train/selected_transcript*
-asr-train/wav2vec2-large-960h-cv/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
