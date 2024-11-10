@@ -1,6 +1,13 @@
 # Automatic Speech Recognition
+ 
+This repository contains a project for Automatic Speech Recognition (ASR), making use of `facebook:wav2vec2-large-960h`. We
+1. Create a microservice for using the aforementioned model
+2. Finetune the model on the common voice dataset
+3. Provide a discussion on further steps to improve the model
+4. Provide a discussion on a deep learning pipeline for a continuously learning ASR model meant for transcribing dysarthric speech
+5. Perform hotword detection on the common voice dataset
 
-## 1. Using pretrained 🤗 facebook/wav2vec2-large-960h model
+## 1. Using pretrained 🤗 facebook/wav2vec2-large-960h model microservice
 Please follow the steps below to install and run this model
 ```
 cd asr
@@ -15,6 +22,6 @@ To transcribe a .wav or .mp3 audio file, run the following command, replacing `/
 
 A sample of a batch-transcribed text is given in `asr/cv-valid-dev-updated.csv`.
 
-!!!!!!!!!!!!!
-Place common_voice in main directory.
+Assumptions:
+Common Voice dataset downloaded from common_voice in main directory.
 assume cloned to home directory at ~
